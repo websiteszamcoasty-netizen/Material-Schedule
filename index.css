@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { @apply scroll-smooth; }
+  body {
+    @apply bg-blueprint-50 text-graphite-900 font-sans antialiased;
+  }
+  .dark body {
+    @apply bg-graphite-900 text-blueprint-50;
+  }
+  ::selection { @apply bg-amber-400/40; }
+}
+
+@layer components {
+  .card {
+    @apply bg-white dark:bg-graphite-800 border border-blueprint-100 dark:border-graphite-800 rounded-xl shadow-sm;
+  }
+  .btn {
+    @apply inline-flex items-center gap-2 px-3.5 py-2 rounded-lg text-sm font-medium transition-colors disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-blueprint-700 text-white hover:bg-blueprint-600;
+  }
+  .btn-secondary {
+    @apply btn bg-blueprint-50 text-blueprint-800 border border-blueprint-200 hover:bg-blueprint-100 dark:bg-graphite-800 dark:text-blueprint-100 dark:border-graphite-800 dark:hover:bg-graphite-800/70;
+  }
+  .btn-amber {
+    @apply btn bg-amber-400 text-blueprint-950 hover:bg-amber-500;
+  }
+  .btn-ghost {
+    @apply btn text-blueprint-700 hover:bg-blueprint-100 dark:text-blueprint-100 dark:hover:bg-graphite-800;
+  }
+  .input {
+    @apply w-full px-2.5 py-1.5 rounded-md border border-blueprint-200 dark:border-graphite-800 bg-white dark:bg-graphite-900 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400/60;
+  }
+  .label {
+    @apply block text-xs font-semibold uppercase tracking-wide text-blueprint-500 dark:text-blueprint-300 mb-1;
+  }
+  .table-cell-input {
+    @apply w-full bg-transparent px-1.5 py-1 text-sm focus:outline-none focus:bg-amber-50 dark:focus:bg-graphite-800 rounded;
+  }
+}
+
+/* Print styles for browser print preview of reports */
+@media print {
+  .no-print { display: none !important; }
+}
